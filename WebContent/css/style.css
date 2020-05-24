@@ -1,0 +1,180 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    padding: 0;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+.container{
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+ul{
+    margin: 0;
+    padding: 0%;
+}
+.button_1{
+    background: #e8491d;
+    border: 0;
+    color: #ffffff;
+    height: 28px;
+    border-radius: 5px;
+    padding-left: 20px;
+    padding-top: 3px;
+    padding-right: 20px;
+    font-size: 15px;
+    color: darkgreen;
+    padding-bottom: 20px;
+}
+.button_1:hover{
+    background: rgb(133, 150, 150);
+
+}
+.button_2{
+    background: #e8491d;
+    border: 0;
+    color: #ffffff;
+    height: 35px;
+    border-radius: 8px;
+    padding-top: 8px;
+    font-size: 15px;
+    color: darkgreen;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+.button_2:hover{
+    background: rgb(58, 177, 177);
+
+}
+#a_1{
+    border-radius: 30px;
+}
+.signup-btn{
+    top: 30px;;
+    right: 5px;
+    position: absolute;
+    text-decoration: none;
+    color: white;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    background-image: linear-gradient(#42455a,#42455a),radial-gradient(circle at top left, #fd4800,#487a83);
+    background-origin: border-box;
+    background-clip: content-box,border-box;
+}
+.signup-btn span:hover{
+    color: #79a57c;
+}
+.signup-btn span{
+    display: block;
+    padding: 5px 10px;
+}
+.h1{
+    color: #d12121;
+}
+header{
+    background: #35424a;
+    color: #ffffff;
+    padding-top: 30px ;
+    padding-bottom: 5px;
+    min-height: 70px;
+    border-bottom: orange 3px solid;
+
+}
+header a{
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+header ul{
+    margin: 0;
+    padding: 0;
+}
+header li{
+    
+    display: inline;
+    padding: 0 15px 0 15px;
+}
+header #branding{
+    float: left;
+
+}
+header #branding h1{
+    margin: 0;
+}
+header nav{
+    float: right;
+    margin-top: 10px;
+}
+header .highlight, header .current a{
+    color: #2a89e2;
+    font-weight: bold;    
+
+}
+header a:hover{
+    color: #cccccc;
+    font-weight: bold;
+}
+.d-block w-100{
+        background-size: 400px;
+
+}
+#showcase{
+    min-height: 400px;
+    background-image: url("../image/showcase1.jpg");
+    text-align: center;
+    color: #ffffff;
+}
+#showcase h1{
+    margin-top: 100px;
+    font-size: 55px;
+    margin-bottom: 10px;
+}
+#showcase p{
+    font-size: 20px;
+
+}
+#newsletter{
+    padding: 15px;
+    color: #ffffff;
+    background: #35424a;
+}
+#newsletter h1{
+    float: left;
+
+}
+#newsletter form{
+    float: right;
+    margin-top: 15px;
+}
+#newsletter input[type="email"]{
+    padding: 4px;
+    height: 25px;
+    width: 250px;
+}
+#boxex{
+    margin-top: 20px ;
+}
+#boxex .box{
+    float: left;
+    padding: 10px;
+    text-align: center;
+    width: 30%;
+}
+#boxex .box img{
+    width: 90px;
+}
+footer p{
+    background-color: #e8491d;
+    text-align: center;
+    margin-top: 20px;
+    color: #ffffff;
+    padding: 2px;
+}
+
+
+
+

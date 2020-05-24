@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Login and Registration Form</title>
+	 <link rel="stylesheet" type="text/css" href="./css/Page_Footer.css">
+    <link rel="stylesheet" type="text/css" href="./css/bodystyle.css">
+    <link rel="stylesheet" type="text/css" href="./css/dropdownstyle.css">
+	<link rel="stylesheet" type="text/css" href="./css/formstyle.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	
+	<script>
+	function valid1()
+	{
+		
+		
+		var name=document.getElementById("tname").value;
+		var email=document.getElementById("temail").value;
+		var password=document.getElementById("tpassword").value;
+		var mobile=document.getElementById("tmobile").value;
+		var pat=/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-z]{2,4}$/;
+		var pat1=/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
+	
+	
+		if(name<3)
+			{
+			alert("Name is too short:");
+			}
+		
+		if(!isNaN(name))
+			{
+			alert("Name should contain olny String:");
+			}
+		
+		if(name=="")
+			{
+			alert("Name should not be empty:");
+			}
+		if(isNaN(mobile))
+		{
+		alert("Number shoud contain only number");
+		}
+		
+		if(pat.test(email)!=true)
+			{
+				alert("Input valid email:");
+			}
+		
+		if(pat1.test(password)!=true)
+		{
+			alert("Input valid password Alteast one digit,small ,letter,Capital letter:");
+		}
+		
+		
+		
+	}
+	
+	</script>
+	
+ <script>
+$(document).ready(function(){
+	$("#btn2").click(function(){
+		
+		
+		alert("i am in Ajax");
+		
+		$.ajax({
+			type:'GET',
+			data:{name:$("#tname").val(),mobile:$("#tmobile").val(),email:$("#temail").val(),
+				password:$("#tpassword").val(),address:$("#taddress").val(),gender:$("#tgender").val(),dob:$("#tdob").val()
+				,qualification:$("#tqualification").val()},
+				
+			url:'TutorRegistration',
+			success: function(result)
+			{
+				if(result=="OK")
+					{
+					swal({
+						  title: "Good job!",
+						  text: "You clicked the button!",
+						  icon: "success",
+						});
+					}
+				else
+					{
+					swal({
+						  title: "Try Again!",
+						  text: "You clicked the button!",
+						  icon: "error",
+						});
+					}
+			}
+		
+			});
+		});
+});
+
+</script>
+
+<script>
+$(document).ready(function(){
+	$("#btn4").click(function(){
+		
+alert("done");
+		
+		$.ajax({
+			
+			type:'POST',
+			
+			data:{ email:$("#tlemail").val(),password:$("#tlpassword").val(),},
+				
+			url:'tutorLoginVerification',
+			success: function(result)
+			{
+				
+			alert(result);
+				if(result=="YES")
+				{
+				swal({
+					  title: "Good job!",
+					  text: "You clicked the button!",
+					  icon: "success",
+					});
+					document.location.href='TutorProfile.jsp';
+				}
+			else
+				{
+				swal({
+					  title: "Try Again!",
+					  text: "Put Valid Email and Password",
+					  icon: "error",
+					});
+				}	
+			}
+			});
+		});
+});
+
+</script>
+</head>
+<body>
+		<div class="Hero">
+			<div class="form-box">
+				<div class="button-box">
+					<div id="btn"></div>
+					<button type="button" class="toggle-btn" onclick="login()">Login</button>
+					<button type="button" class="toggle-btn" onclick="register()">Register</button>
+				</div>
+				
+						<!-- Login -->
+						<form id="login" class="input_group1">
+							<input type="email"  id="tlemail" name="temail" class="input-field" placeholder="User Id" required>
+							<input type="Password" id="tlpassword" name="tpassword"class="input-field" placeholder="Enter Password" required>
+							<input type="button" id="btn4" class="submit-btn" value="login">
+							<a href="forgetPassword.jsp">forget Password</a>
+						</form>
+						<!-- Register -->
+						<form id="register" class="input_group2">
+							<input type="text" id="tname" class="input-field" placeholder="First name" required>
+							<input type="text"  id="tmobile"  class="input-field" placeholder="Mobile No."  required>
+							<input type="email" id="temail" class="input-field" placeholder="Email Id" required>
+							
+							<input type="Password" id="tpassword" class="input-field" placeholder="Enter Password" required><br>
+							<input type="text"  id="taddress" class="input-field" placeholder="Address" required>
+							Gender  <input type="radio"  id="tgender" value="Male" name="Gender" placeholder="Male" required>Male   
+							         <input type="radio" id="tgender" value="Female"  name="Gender" placeholder="Female" required>Female<br>
+									 <input type="date"  id="tdob" class="input-field" placeholder="DOB" required><br><br>
+							 <label>Qualification</label>
+									 <input list="tqualification" name="qualification">
+									 <datalist id="tqualification" class="input-field">
+									   <option value="UG">
+									    <option value="PG"> 
+										<option value="Ph.d">
+									 </datalist><br>
+									 <br>
+							
+							<input type="button" id="btn2" class="submit-btn" onclick="valid1()" value="Register">
+						</form>
+			</div>
+
+		</div>
+		<script>
+			
+			var x = document.getElementById("login")
+			var y = document.getElementById("register")
+			var z = document.getElementById("btn")
+
+			function register(){
+				x.style.left = "-400px";
+				y.style.left = "50px";
+				z.style.left = "110px";
+			}
+
+			function login(){
+				x.style.left = "50px";
+				y.style.left = "450px";
+				z.style.left = "0";
+
+			}
+		</script>
+</body>
+</html> 
